@@ -83,13 +83,29 @@ public class PathsTest {
         System.out.println("File 转 URI :" + f.toURI().toString());
         System.out.println("File 转 Path :" + f.toPath().toString());
 
+        DirectoryStream.Filter<Path> f1 = new DirectoryStream.Filter<Path>() {
+            @Override
+            public boolean accept(Path entry) throws IOException {
+                entry.toFile().getAbsolutePath().contains("txt");
+                return false;
+            }
+        };
         System.out.println("目录遍历");
         AtomicInteger i1 = new AtomicInteger(0);
         Files.newDirectoryStream(Paths.get("d:\\t")).forEach(p -> {
             //  System.out.println(p.toString());
+            try {
+                boolean accept = f1.accept(p1);
+                System.out.println("满足匹配条件吗？" + accept);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             i1.incrementAndGet();
         });
         System.out.println("newDirectoryStream模式遍历文件" + i1.get() + "个");
+
+        DirectoryStream<Path> dPath = Files.newDirectoryStream(Paths.get("d:\\t"));
+
 
         i1.set(0);
         // 遍历所有目录
