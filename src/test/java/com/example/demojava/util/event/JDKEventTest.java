@@ -2,6 +2,7 @@ package com.example.demojava.util.event;
 
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.WatchService;
 import java.util.ArrayList;
 import java.util.EventListener;
 import java.util.EventObject;
@@ -18,6 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class JDKEventTest {
     @Test
     public void test() {
+
         ClickSource source = new ClickSource("");
 
         source.addListener(new AddClickListener());
