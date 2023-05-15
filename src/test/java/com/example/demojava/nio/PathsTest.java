@@ -2,9 +2,13 @@ package com.example.demojava.nio;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author zhengzz
@@ -48,12 +52,76 @@ public class PathsTest {
 
     }
 
+    /**
+     * @return
+     * @Param
+     * @author zhengzz
+     * @description TODO
+     * @date 18:10 2023/5/15
+     * @see https://blog.csdn.net/u010889616/article/details/52694061
+     **/
+    @Test
+    public void testPath2() throws IOException {
+        // 相对路径
+        Path p1 = Paths.get("d:/", "t/test.txt");
+        System.out.println("p1" + p1.toAbsolutePath().toString());
+        // 绝对路径
+        Path p2 = Paths.get("d:/t/test.txt");
+        System.out.println("p2" + p1.toAbsolutePath().toString());
+        // uri模式
+        URI u = URI.create("file:///d:/t/test.txt");
+        Path p3 = Paths.get(u);
+        System.out.println("p3" + p1.toAbsolutePath().toString());
+
+        // FileSystems构造：
+        Path p4 = FileSystems.getDefault().getPath("d:/", "t/test.txt");
+        System.out.println("p4" + p1.toAbsolutePath().toString());
+
+        // File和Path之间的转换，
+        File f = p1.toFile();
+        System.out.println("Path 转 File :" + f.getAbsolutePath().toString());
+        System.out.println("File 转 URI :" + f.toURI().toString());
+        System.out.println("File 转 Path :" + f.toPath().toString());
+
+        System.out.println("目录遍历");
+        AtomicInteger i1 = new AtomicInteger(0);
+        Files.newDirectoryStream(Paths.get("d:\\t")).forEach(p -> {
+            //  System.out.println(p.toString());
+            i1.incrementAndGet();
+        });
+        System.out.println("newDirectoryStream模式遍历文件" + i1.get() + "个");
+
+        i1.set(0);
+        // 遍历所有目录
+        Files.walkFileTree(Paths.get("d:\\t"), new FileVisitor<Path>() {
+            @Override
+            public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+                return null;
+            }
+
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                return null;
+            }
+
+            @Override
+            public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+                return null;
+            }
+
+            @Override
+            public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                return null;
+            }
+        });
+    }
+
     public void testFiles() throws IOException {
         // CopyOption
         Files.copy((InputStream) null, null, null);
         //Files.move()
-       // Files.newDirectoryStream()
-       // Files.createDirectory()
+        // Files.newDirectoryStream()
+        // Files.createDirectory()
 
     }
 }
