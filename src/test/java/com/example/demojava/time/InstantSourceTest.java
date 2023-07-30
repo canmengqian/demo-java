@@ -11,5 +11,6 @@ public class InstantSourceTest {
     void  test(){
         InstantSource instantSource= InstantSource.system ();
         log.info ("{}",instantSource);
+
     }
 }
