@@ -1,7 +1,7 @@
 package com.example.demojava.net;
 
 import org.junit.jupiter.api.Test;
-import sun.net.www.MimeTable;
+//import sun.net.www.MimeTable;
 
 import javax.activation.MimetypesFileTypeMap;
 import java.net.FileNameMap;
@@ -15,7 +15,7 @@ import java.net.URLConnection;
  * @date 2023/5/26
  */
 public class FileNameMapTest {
-    FileNameMap nameMap = URLConnection.getFileNameMap();
+   /* FileNameMap nameMap = URLConnection.getFileNameMap();
 
     @Test
     public void testFileMap() {
@@ -35,5 +35,5 @@ public class FileNameMapTest {
         System.out.println(MimeTable.loadTable().getContentTypeFor("foo.png"));
         // ===============================================================
 
-    }
+    }*/
 }

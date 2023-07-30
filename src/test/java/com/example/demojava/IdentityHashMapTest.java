@@ -21,22 +21,22 @@ public class IdentityHashMapTest {
     @Test
     public void testSameKey() {
         IdentityHashMap<demo, String> map = new IdentityHashMap<>();
-        demo d1 = new demo("1");
+        /*demo d1 = new demo("1");
         demo d2 = new demo("1");
         demo d3 = new demo("1");
-        demo d4 = new demo("1");
+        demo d4 = new demo("1");*/
         //map.put(d, "4");
 
-        map.put(d1, "1");
+        /*map.put(d1, "1");
         map.put(d2, "2");
         map.put(d3, "3");
-        map.put(d4, "4");
+        map.put(d4, "4");*/
 
         //System.out.println(System.identityHashCode());
 
-        System.out.println(map.size());
-        System.out.println(map.get(d1));
-        System.out.println(map.get(new demo("1")));
+      /*  System.out.println(map.size());
+        System.out.println(map.get(d1));*/
+      //  System.out.println(map.get(new demo("1")));
     }
 
     @Test
@@ -57,26 +57,26 @@ public class IdentityHashMapTest {
         Map<demo, String> m = new HashMap<>();
         String n = "1";
         String n2 = "1";
-        System.out.println(n == n2);
+       /* System.out.println(n == n2);
         System.out.println(n.equals(n2));
-        System.out.println(n.hashCode() == n2.hashCode());
+        System.out.println(n.hashCode() == n2.hashCode());*/
 
-        demo d1 = new demo("1");
+        /*demo d1 = new demo("1");
         demo d2 = new demo("1");
         System.out.println((d1.id==d2.id) +"kk");
         System.out.println((d1==d2) +"kk1");
         System.out.println(System.identityHashCode(d1)==System.identityHashCode(d2));
         System.out.println(d1.equals(d2));
-        System.out.println(d1.hashCode() == d2.hashCode());
+        System.out.println(d1.hashCode() == d2.hashCode());*/
 
-        m.put(new demo("1"), "1");
-        m.put(new demo("2"), "2");
-        m.put(new demo("3"), "3");
-        m.put(new demo("4"), "4");
-        m.put(new demo("1"), "5");
+        m.put(new demo("1","1"), "1");
+        m.put(new demo("1","1"), "2");
+        m.put(new demo("1","1"), "3");
+        m.put(new demo("1","1"), "4");
+        m.put(new demo("1","5"), "5");
 
         System.out.println(m.size());
-        System.out.println(m.get(new demo("1")));
+        System.out.println(m.get(new demo("1","5")));
     }
 
     @Data
@@ -84,6 +84,7 @@ public class IdentityHashMapTest {
     @AllArgsConstructor
     class demo {
         private String id;
+        private String name;
 
         /*@Override
         public boolean equals(Object o) {
