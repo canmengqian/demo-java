@@ -12,9 +12,7 @@ import java.util.List;
 public class SetTest {
     @Test
     void test() {
-        
         List<String> words = Lists.newArrayList("a", "b", "c", "b", "b", "c");
-
         Multiset<String> multiset1 = HashMultiset.create();
         for (String word : words) {
             multiset1.add(word);

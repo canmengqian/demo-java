@@ -1,7 +1,11 @@
 package guava.collections;
 
+import com.google.common.collect.MapMaker;
 import com.google.common.collect.Maps;
 import org.junit.jupiter.api.Test;
+
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * @author zhengzz
@@ -15,5 +19,12 @@ public class MapTest {
     void test() {
         Maps.newHashMap();
         Maps.newLinkedHashMap();
+    }
+
+    @Test
+    void testMapMaker() {
+        ConcurrentMap<String, String> concurrentHashMap = new MapMaker().makeMap();
+        concurrentHashMap.put("a", "b");
+        System.out.println(concurrentHashMap.toString());
     }
 }
