@@ -1,8 +1,6 @@
 package guava.collections;
 
-import com.google.common.collect.HashMultiset;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Multiset;
+import com.google.common.collect.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -28,5 +26,20 @@ public class SetTest {
         multiset1.elementSet().forEach(System.out::println);
 
 
+    }
+
+    @Test
+    void testSort(){
+        SortedMultiset<String> multiset = TreeMultiset.create ();
+        multiset.setCount ("2",3);
+        multiset.setCount ("3",3);
+        multiset.setCount ("4",4);
+        multiset.setCount ("5",5);
+        //
+        log.info ("正向排序");
+
+        multiset.stream().sorted ().forEach (System.out::println);
+        log.info ("逆向排序");
+        multiset.descendingMultiset ().forEach (System.out::println);
     }
 }
