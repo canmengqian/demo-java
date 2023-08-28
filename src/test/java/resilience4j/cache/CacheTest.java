@@ -12,7 +12,7 @@ import io.github.resilience4j.cache.CacheRegistryStore;
  */
 public class CacheTest {
     void test(){
-        Cache<String,String> cache = Cache.of();
-        CacheRegistryStore.
+        /*Cache<String,String> cache = Cache.of();
+        CacheRegistryStore.*/
     }
 }
