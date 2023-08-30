@@ -127,6 +127,8 @@ public class RateLimitTest {
         })).recover(e -> {
             System.out.println("捕捉到异常并进行恢复");
             return false;
+        }).onSuccess(c -> {
+            System.out.println("数据处理成功");
         }).get();
         System.out.println("获取到的值为" + val);
     }
