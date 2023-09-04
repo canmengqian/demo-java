@@ -1,7 +1,6 @@
 package com.example.demojava.lang;
 
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -14,6 +13,9 @@ import java.io.Serializable;
  */
 @Data
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Person implements Serializable {
     String name;
     transient String like;
