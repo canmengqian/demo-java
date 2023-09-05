@@ -2,6 +2,7 @@ package vavr;
 
 import cn.hutool.core.util.RandomUtil;
 import io.vavr.control.Option;
+import it.unimi.dsi.fastutil.doubles.DoubleLists;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.Predicate;
@@ -18,6 +19,7 @@ import static io.vavr.API.*;
 public class MatchTest {
     @Test
     void test() {
+
         int i = RandomUtil.randomInt(10);
         String s = Match(i).of(
                 Case($(1), "one"),

@@ -5,6 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.Map;
+
 /**
  * @author zhengzz
  * @version 1.0.0
@@ -16,6 +21,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Person {
+public class Person implements Cloneable, Serializable {
     String name;
+    Addr addr;
+    BigDecimal salary;
+    Date birthday;
+    Map<String,String> extProps;
+    public Person(String name) {
+        this.name = name;
+    }
 }
