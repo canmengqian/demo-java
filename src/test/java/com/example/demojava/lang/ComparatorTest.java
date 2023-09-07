@@ -1,9 +1,12 @@
 package com.example.demojava.lang;
 
+import io.vavr.collection.List;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.util.Comparator;
+import java.util.stream.IntStream;
 
 /**
  * @author zhengzz
@@ -14,7 +17,7 @@ import java.lang.reflect.Proxy;
  */
 public class ComparatorTest {
     @Test
-    void test(){
+    void test() {
       /*  InvocationHandler
         Proxy.newProxyInstance()*/
     }

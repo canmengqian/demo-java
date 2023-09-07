@@ -12,7 +12,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public final class Squrad implements Shape {
+public final  class Squrad implements Shape {
     double length;
     double width;
 
