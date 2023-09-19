@@ -1,5 +1,8 @@
 package com.example.demojava.dto;
 
+import lombok.Data;
+import lombok.ToString;
+
 /**
  * @author zhengzz
  * @version 1.0.0
@@ -7,6 +10,8 @@ package com.example.demojava.dto;
  * @description TODO
  * @date 2023/5/30
  */
+@Data
+@ToString
 public class Person {
     String name;
     int age;
