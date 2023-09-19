@@ -18,6 +18,10 @@ import java.io.Serializable;
 @Builder
 public class Person implements Serializable {
     String name;
+
+    int age;
+
+    double salary;
     transient String like;
 
 
