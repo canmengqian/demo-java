@@ -5,6 +5,12 @@ import com.example.demojava.dto.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ForkJoinPool;
@@ -101,12 +107,25 @@ public class StreamTest {
         System.out.println(sum);
 
         var users =
-                IntStream.rangeClosed(1, 4).mapToObj(i -> {
-                    return new Person("" + i, i);
-                }).toList();
-        Person newPerson = users.stream().reduce(new Person("lisi", 1), (s, p) -> new Person(p.getName(), s.getAge() + p.getAge()), (u1, u2) -> new Person("lisi", u1.getAge() * u2.getAge()));
+                IntStream.rangeClosed(1, 4).mapToObj(i -> new Person("" + i, i)).toList();
+        Person newPerson = users.stream().reduce(new Person("lisi", 1),
+                (s, p) -> new Person(p.getName(), s.getAge() + p.getAge()),
+                (u1, u2) -> new Person("lisi", u1.getAge() * u2.getAge()));
         System.out.println(newPerson.toString());
-        Person newPerson1 = users.stream().parallel().reduce(new Person("lisi", 1), (s, p) -> new Person(p.getName(), s.getAge() + p.getAge()), (u1, u2) -> new Person(u2.getName(), u1.getAge() * u2.getAge()));
+        Person newPerson1 = users.stream()
+                .parallel()
+                .reduce(new Person("lisi", 1),
+                        (s, p) -> new Person(p.getName(), s.getAge() + p.getAge()),
+                        (u1, u2) -> new Person(u2.getName(), u1.getAge() * u2.getAge()));
         System.out.println(newPerson1.toString());
+    }
+
+    @Test
+    void test5() throws NoSuchMethodException, MalformedURLException, InvocationTargetException, IllegalAccessException {
+        File programRootDir = new File("D:\\t\\07\\test.txt");
+        ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+        Method add = URLClassLoader.class.getDeclaredMethod("addURL", new Class[]{URL.class});
+        add.setAccessible(true);
+        add.invoke(classLoader, programRootDir.toURI().toURL());
     }
 }

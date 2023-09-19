@@ -3,6 +3,8 @@ package com.example.demojava.lang;
 import cn.hutool.core.bean.BeanUtil;
 import domain.bean.Addr;
 import domain.bean.Person;
+import lombok.Data;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;
@@ -49,5 +51,53 @@ public class CloneableTest {
         log.info("bean utils p1:{},p2:{}", person.toString(), p2.toString());
 
 
+    }
+
+    /**
+     * 1. 测试构造器复制
+     */
+    @Test
+    public void test2() {
+        // 基于构造器的浅拷贝
+        Car bmw = new Car(new Wheel("red"), "BMW");
+        System.out.println(bmw.toString());
+        Car wuling = new Car(bmw);
+        System.out.println(wuling.toString());
+        // 更改轮胎颜色
+        wuling.getWheel().setColor("blue");
+        System.out.println("更改轮胎颜色的BMW：" + bmw.toString());
+        System.out.println("更改轮胎颜色的wuling：" + wuling.toString());
+    }
+
+    @Data
+    @ToString
+    class Car {
+        Wheel wheel;
+        String brand;
+
+        public Car(Wheel wheel, String brand) {
+            this.wheel = wheel;
+            this.brand = brand;
+        }
+
+        /**
+         * car 参数类型构造器
+         *
+         * @param car
+         */
+        public Car(Car car) {
+            this.wheel = car.getWheel();
+            this.brand = car.getBrand();
+        }
+    }
+
+    @Data
+    @ToString
+    class Wheel {
+        String color;
+
+        public Wheel(String color) {
+            this.color = color;
+        }
     }
 }
