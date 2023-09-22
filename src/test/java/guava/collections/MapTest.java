@@ -1,7 +1,6 @@
 package guava.collections;
 
-import com.google.common.collect.MapMaker;
-import com.google.common.collect.Maps;
+import com.google.common.collect.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -26,5 +25,18 @@ public class MapTest {
         ConcurrentMap<String, String> concurrentHashMap = new MapMaker().makeMap();
         concurrentHashMap.put("a", "b");
         System.out.println(concurrentHashMap.toString());
+    }
+
+    @Test
+    void testMultiMap(){
+        ListMultimap<String,Integer> listMultimap = MultimapBuilder.treeKeys ().arrayListValues ().build ();
+        listMultimap.put ("1",1);
+        listMultimap.put ("1",1);
+        listMultimap.put ("1",2);
+        listMultimap.put ("1",3);
+        System.out.println (listMultimap.get ("1"));
+        listMultimap.remove ("1",1);
+        System.out.println (listMultimap.get ("1"));
+
     }
 }
