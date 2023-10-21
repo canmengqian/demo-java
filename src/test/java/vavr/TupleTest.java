@@ -28,8 +28,12 @@ public class TupleTest {
         // 拼接其他元组
         // 移除元素
         // 更新元素
+        tuple2.update1 (2);
+        System.out.println ("更新后元素的值为:"+tuple2._1);
         // 反转元素
         // map处理
+     Tuple2<String,Person> newP=   tuple2.map1 (n->String.valueOf (n));
+
         // 向前或向后追加
         // 转换为Seq
         // 转换为Entry
@@ -39,5 +43,18 @@ public class TupleTest {
 
     void testMatch() {
 
+    }
+
+    @Test
+    public void testCurried() {
+        Function3<Integer,Integer,Integer,Integer> sum=(a,b,c)->a+b+c;
+         Function1<Integer,Function1<Integer,Function1<Integer,Integer>>> c=sum.curried ();
+        Function1<Integer,Function1<Integer,Integer> > f1=c.apply (1);
+        Function1<Integer,Integer> f3= f1.apply (2);
+        Integer rs=f3.apply (4);
+        System.out.println (rs);
+      /*  final Function1<Integer,Function1<Integer,Integer>> add2= sum.curried().apply(2);
+        System.out.println(add2.apply(3));   // Function3
+        System.out.println(add2.apply(3).apply(4));*/
     }
 }

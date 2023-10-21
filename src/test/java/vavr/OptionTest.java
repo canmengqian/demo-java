@@ -4,6 +4,8 @@ import io.vavr.Function1;
 import io.vavr.control.Option;
 import org.junit.jupiter.api.Test;
 
+import java.util.function.Supplier;
+
 /**
  * @author zhengzz
  * @version 1.0.0
@@ -14,7 +16,12 @@ import org.junit.jupiter.api.Test;
 public class OptionTest {
     @Test
     void test() {
-        Option<String> maybeFoo = Option.of("foo");
+        Option<String> maybeFoo = Option.of("foo").orElse (new Supplier<Option<? extends String>> () {
+            @Override
+            public Option<? extends String> get() {
+                return Option.of ("1");
+            }
+        });
         //then(maybeFoo.get()).isEqualTo("foo");
         Option<String> maybeFooBar = maybeFoo
                 .flatMap((Function1<String, Option<String>>) s -> Option.of(s.toUpperCase()))
