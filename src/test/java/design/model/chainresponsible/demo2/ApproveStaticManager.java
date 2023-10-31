@@ -13,7 +13,7 @@ import java.util.List;
 public class ApproveStaticManager {
     private static List<ApproveHandler> APPROVE_CHAINS = new LinkedList<>();
 
-    public static void add(ApproveHandler handler) {
+    public static synchronized void add(ApproveHandler handler) {
         APPROVE_CHAINS.add(handler);
     }
 
