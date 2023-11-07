@@ -15,6 +15,7 @@ public class RecordTest {
     public record RecordPerson(String name) {
     }
 
+    public  record  dog(String name , int age,int sex){}
     public record X(String x) {
         static String x_p;
 
@@ -30,5 +31,12 @@ public class RecordTest {
 
         var x = new X("x");
         log.info(x.x());
+    }
+
+    @Test
+    void  testDog(){
+        dog dog = new dog("tom",1,1);
+        System.out.println(dog.name);
+        log.info(dog.toString());
     }
 }
