@@ -288,4 +288,9 @@ public class FluxTest1 {
     void conditionRetry() {
 
     }
+
+    @Test
+    void testNull() {
+
+    }
 }
