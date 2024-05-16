@@ -28,6 +28,20 @@ public class ArrayTest {
         log.info("人物信息:{}", Array.get(ps, 0).toString());
     }
 
+    /**
+     * 测试Number类型
+     */
+    @Test
+    void testNumber(){
+        // 放置Number类型的数据
+       Number[] ns = (Number[]) Array.newInstance(Number.class,2);
+       Array.set(ns,0,1);
+       Array.set(ns,1,2.0D);
+        Arrays.stream(ns).forEach(n->{
+            System.out.println(n.getClass().getName());
+        });
+    }
+
     public static <T> Class<T> getClazz(T t) {
         return (Class<T>) t.getClass();
     }

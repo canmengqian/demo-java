@@ -1,0 +1,13 @@
+server:
+  port: 1111
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    data: classpath:/data.sql
+  data:
+    jpa:
+      repositories:
+        enabled: true
+      show-sql: true
