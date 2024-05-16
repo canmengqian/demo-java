@@ -1,6 +1,8 @@
 package com.example.demojava;
 
+import cn.hutool.core.text.CharSequenceUtil;
 import org.junit.jupiter.api.Test;
+import org.openjdk.jmh.annotations.CompilerControl;
 
 import java.util.Optional;
 
@@ -12,6 +14,7 @@ import java.util.Optional;
  * @date 2023/5/10
  */
 public class OptionalTest {
+    String name;
     @Test
     public void test1() {
         Optional<String> o1 = Optional.empty();
@@ -49,12 +52,17 @@ public class OptionalTest {
     public void testDefValIfNoNull() {
         // 设置默认值,orElse在值不为空的情况下仍然会调用,orElseGet并不执行默认值的获取
         String name = "foo";
+        name =name+"tom";
+        if(this.name==null){
+            this.name = CharSequenceUtil.emptyToDefault (this.name,"") +"tome";
+        }
         String name2 = Optional.ofNullable(name).orElse(getDefaultValue());
         System.out.println("orElse" + name2);
         String name3 = Optional.ofNullable(name).orElseGet(OptionalTest::getDefaultValue);
         System.out.println("orElseGet:" + name3);
-    }
 
+    }
+    @CompilerControl(CompilerControl.Mode.DONT_INLINE)
     public static String getDefaultValue() {
         System.out.println("def");
         return "def";
