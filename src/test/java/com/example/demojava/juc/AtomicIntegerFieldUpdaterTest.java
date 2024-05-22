@@ -5,11 +5,8 @@ import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.request.AuthFeishuRequest;
 import me.zhyd.oauth.request.AuthRequest;
-import me.zhyd.oauth.utils.AuthStateUtils;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 
@@ -64,10 +61,10 @@ public class AtomicIntegerFieldUpdaterTest {
         Thread.currentThread ().join (2000);
     }
 
-    public void renderAuth(HttpServletResponse response) throws IOException {
+    /*public void renderAuth(HttpServletResponse response) throws IOException {
         AuthRequest authRequest = getAuthRequest();
         response.sendRedirect(authRequest.authorize(AuthStateUtils.createState()));
-    }
+    }*/
 
 
     public Object login(AuthCallback callback) {
