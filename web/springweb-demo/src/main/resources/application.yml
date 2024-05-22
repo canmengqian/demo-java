@@ -11,3 +11,38 @@ spring:
       repositories:
         enabled: true
       show-sql: true
+liteflow:
+  enable: true
+  rule-source: classpath:/config/flow.el.xml
+  print-banner: false
+  print-execution-log: true #打印执行日志
+  slot-size: 1024 #TODO 上下文的最大数量槽，默认值为1024
+  #FlowExecutor的execute2Future的线程数，默认为64
+  main-executor-works: 64
+  main-executor-class: com.yomahub.liteflow.thread.LiteFlowDefaultMainExecutorBuilder
+  request-id-generator-class: com.yomahub.liteflow.flow.id.DefaultRequestIdGenerator
+  thread-executor-class: com.yomahub.liteflow.thread.LiteFlowDefaultWhenExecutorBuilder
+  when-max-wait-time: 15000
+  when-max-wait-time-unit: seconds
+  # when线程池下进行设置,核心线程数量
+  when-max-workers: 16
+  when-queue-limit: 512
+  when-thread-pool-isolate: false #TODO
+  # parse_all_on_first_exec 第一次执行时是否解析所有规则，默认为parse_all_on_first_exec
+  # parse_all_on_start 启动时解析所有规则
+  # parse_one_on_first_exec 第一次执行时解析一个规则
+  parse-mode: parse_all_on_start
+  retry-count: 0
+  #TODO
+  #  这个属性为true，则支持多种不同的类型的配置 xml,json,yml
+  # 但是要注意，不能将主流程和子流程分配在不同类型配置文件中
+  support-multiple-type: true
+  node-executor-class: com.yomahub.liteflow.flow.executor.DefaultNodeExecutor
+  # 文件监听
+  enable-monitor-file: true
+  # 日志监听器
+  monitor:
+    delay: 30000
+    enable-log: true
+    queue-limit: 10
+    period: 30000

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
+<flow>
+
+    <nodes>
+        <node id="a" class="com.example.springwebdemo.liteflow.A" name="a" language="java"></node>
+        <node id="b" class="com.example.springwebdemo.liteflow.B" name="b" language="java"></node>
+        <node id="c" class="com.example.springwebdemo.liteflow.C" name="c" language="java"></node>
+    </nodes>
+    <chain name="chain1">
+        THEN(a, b, c);
+    </chain>
+    <chain name="chain2">
+        THEN(a, b, c,end);
+    </chain>
+    <chain name="chain3">
+        THEN(a, end, c,end);
+    </chain>
+    <!--简单迭代器节点-->
+    <chain name="itr_chain_1">
+        ITERATOR(Itr).DO(THEN(itrData));
+    </chain>
+    <!--简单for循环节点-->
+    <chain name="for_chain_1">
+        FOR(f).DO(THEN(fData));
+    </chain>
+</flow>
