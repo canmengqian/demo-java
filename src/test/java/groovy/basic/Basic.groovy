@@ -33,12 +33,17 @@ class Basic {
         /*数据类型转换*/
         def asInt = d as int;
         log.info("数据类型转换 asInt = ${asInt}")
+        def asLong = asInt as long;
+        log.info("数据类型转换 asLong = ${asLong}")
+        def asStr =asLong as String;
+        log.info("数据类型转换 asStr = ${asStr}")
         String nullStr = null;
         Integer asInt2=0;
         try {
             if(CharSequenceUtil.isNotBlank(nullStr)){
                 asInt2= nullStr as int;
             }else{
+                log.warning("字符串转整形 失败")
                 asInt2= -99
             }
         }catch (NullPointerException  _e){

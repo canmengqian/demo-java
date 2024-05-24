@@ -8,6 +8,7 @@ import java.util.logging.Logger
 
 @ToString
 @Builder
+@Newify(User)
 class User {
     private Logger log = Logger.getLogger(User.class.getName());
     String name
@@ -26,5 +27,13 @@ class User {
         user.setName("zhangsan")
         user.setSex("man")
         println "name = ${user.name}, age = ${user.age}, sex = ${user.sex}"
+
+        def u = User()
+        u.with {
+            name = "zhangsan"
+            age = 24
+            sex = "man"
+        }
+        log.info("name = ${u.name}, age = ${u.age}, sex = ${u.sex}")
     }
 }
