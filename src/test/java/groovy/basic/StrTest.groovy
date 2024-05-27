@@ -58,13 +58,30 @@ class StrTest {
     }
 
     /*字符测试*/
+
     @Test
     void testStr_2() {
         /*字符转换*/
         def ch = 'a'
         assert ch == 'a'
-        ch ='b' as char
-        assert ch == (char)'b'
+        ch = 'b' as char
+        assert ch == (char) 'b'
 
+    }
+
+    @Test
+    void testStr_3() {
+
+        T tom = new T(name: null, age: 18)
+        log.info("tom = ${tom}")
+        // null 值处理
+        def name = tom.name ?: "zhangsan"
+        log.info("name is ${name}")
+
+    }
+
+    class T {
+        String name
+        int age;
     }
 }
