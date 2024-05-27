@@ -7,4 +7,7 @@ trait Fly {
     void fly() {
         println("fly")
     }
+    void superFly() {
+        println("superFly")
+    }
 }
