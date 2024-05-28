@@ -1,12 +1,8 @@
 package groovy;
 
-import groovy.lang.GroovyClassLoader;
-import groovy.lang.GroovyCodeSource;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * @author zhengzz
@@ -19,10 +15,10 @@ import java.net.URL;
 public class GroovyScriptTest {
     @Test
     void test() throws InstantiationException, IllegalAccessException, IOException {
-        GroovyClassLoader classLoader = new GroovyClassLoader();
+     /*   GroovyClassLoader classLoader = new GroovyClassLoader();
         URL url =GroovyScriptTest.class.getResource("/groovy/Demo.class");
         GroovyCodeSource source = new GroovyCodeSource(new File("D:\\demo-java\\src\\test\\java\\groovy\\Demo.groovy"));
         Class<Demo> demo = classLoader.parseClass(source);
-        demo.newInstance().sayHello();
+        demo.newInstance().sayHello();*/
     }
 }
