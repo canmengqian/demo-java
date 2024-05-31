@@ -84,6 +84,51 @@ class ExceptTest extends Specification {
         new User(name: "zhangsan1") | new User(name: "lisi")
     }
 
+
+    def "异常断言"() {
+        when:
+        getUser(user)
+        then:
+
+        def e = thrown(exception)
+        log.info(e.getClass().getName());
+
+        where:
+        user                       | exception
+        new User(name: "zhangsan") | IllegalArgumentException
+        new User(name: "lisi")     | NullPointerException
+    }
+
+    def getUser(User user) {
+        if (user.name.equals("zhangsan")) {
+            throw new IllegalArgumentException()
+        }
+        if (user.name.equals("lisi")) {
+            throw new NullPointerException()
+        }
+    }
+
+    @Unroll
+    def "validate extension of #fileToValidate"() {
+        when: "validator checks filename"
+        def isValid = validate fileToValidate
+
+        then: "return appropriate result"
+        isValid == expectedResult
+
+        where: "input files are"
+        fileToValidate || expectedResult
+        'some.jpeg'    || true
+        'some.jpg'     || true
+        'some.tiff'    || false
+        'some.bmp'     || true
+        'some.png'     || false
+    }
+
+    def static fileToValidate(String file) {
+        return file.endsWith('jpeg') || file.endsWith('jpg') || file.endsWith('bmp')
+    }
+
     def setup() {
         log.info("每个方法都执行一次-前置方法")
     }
