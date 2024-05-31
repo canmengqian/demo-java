@@ -23,4 +23,15 @@ class WithTest extends Specification {
             age == 18
         }
     }
+
+    def "软断言不中断测试"() {
+        given:
+        def user = new User(name: "zhangsan", age: 18, sex: "man")
+        expect:
+        verifyAll {
+            user.sex == "wman"
+            user.name == "zhanwgsan"
+            user.age == 18
+        }
+    }
 }
