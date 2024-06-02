@@ -1,18 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-05-28" view-index="0" gantt-divider-location="432" resource-divider-location="300" version="3.3.3300" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-05-24" view-index="0" gantt-divider-location="768" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
     <description/>
-    <view zooming-state="default:3" id="gantt-chart">
-        <field id="tpd3" name="名称" width="116" order="0"/>
-        <field id="tpd4" name="开始日期" width="94" order="1"/>
-        <field id="tpd5" name="结束日期" width="140" order="2"/>
-        <field id="tpd6" name="持续" width="81" order="3"/>
+    <view zooming-state="default:1" id="gantt-chart">
+        <field id="tpd3" name="名称" width="168" order="0"/>
+        <field id="tpd4" name="开始日期" width="138" order="1"/>
+        <field id="tpd5" name="结束日期" width="203" order="2"/>
+        <field id="tpd6" name="持续" width="112" order="3"/>
+        <field id="tpd7" name="完成" width="76" order="4"/>
+        <field id="tpd1" name="优先级" width="70" order="5"/>
         <option id="taskLabelUp" value="predecessors"/>
         <option id="taskLabelDown" value="coordinator"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
         <option id="filter.inProgressTodayTasks" value="false"/>
-        <timeline><![CDATA[2,5,3]]></timeline>
-        <option id="color.recent"><![CDATA[#0066cc #999900 #00cccc #666666 #009999 #990099 #8e6fda #3366ff]]></option>
+        <timeline><![CDATA[5,3,2]]></timeline>
+        <option id="color.recent"><![CDATA[#eed420 #d6d9df #fcab22 #f0d11f #0066cc #999900 #00cccc #666666 #009999 #990099]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="名称" width="208" order="0"/>
@@ -47,19 +49,27 @@
         <task id="13" uid="b288b073fc6d47dab44046052038bc9c" name="JDK" meeting="false" start="2024-05-20" duration="1" complete="0" expand="false">
             <task id="14" uid="5d41e56d1e7b4948ba6f5dfc68aaf9c3" name="网络编程" meeting="false" start="2024-05-20" duration="1" complete="0" thirdDate="2024-05-20" thirdDate-constraint="0" priority="3" expand="true"/>
         </task>
-        <task id="2" uid="90b9b388ea02447096971d667ff17c0f" name="groovy学习" color="#009999" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2024-05-28" duration="24" complete="0" thirdDate="2024-05-23" thirdDate-constraint="0" expand="true">
-            <task id="10" uid="a4dd75a989274207bed2023f2389dad1" name="groovy基础和项目实践" color="#0066cc" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-28" duration="24" complete="0" thirdDate="2024-05-28" thirdDate-constraint="0" expand="true"/>
-            <task id="3" uid="f630eb33257e45de96a4cc6df27b8bd3" name="spock_1" color="#00cccc" shape="0,1,0,1,0,0,1,0,0,1,0,1,1,0,0,0" meeting="false" start="2024-05-28" duration="4" complete="0" thirdDate="2024-05-27" thirdDate-constraint="0" expand="true">
+        <task id="2" uid="90b9b388ea02447096971d667ff17c0f" name="groovy学习" color="#fcab22" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2024-05-28" duration="27" complete="79" thirdDate="2024-05-23" thirdDate-constraint="0" expand="true">
+            <task id="10" uid="a4dd75a989274207bed2023f2389dad1" name="groovy基础和项目实践" color="#eed420" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-31" duration="24" complete="100" thirdDate="2024-05-28" thirdDate-constraint="0" expand="true"/>
+            <task id="3" uid="f630eb33257e45de96a4cc6df27b8bd3" name="spock_1" color="#eed420" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2024-05-28" duration="9" complete="70" thirdDate="2024-05-27" thirdDate-constraint="0" webLink="https%3A%2F%2Fwww.01net.com%2Ftelecharger%2Fbureautique%2Forganiseurs%2Fganttproject.html" expand="true">
+                <notes><![CDATA[1. given-when-then 基础表达
+2. expect简单使用
+3.where 使用
+
+完成的目标
+1. 基础语法和数据表的使用
+2. 简单mock
+
+未完成:
+1.文档梳理
+2.交互测试使用]]></notes>
                 <depend id="11" type="2" difference="0" hardness="Rubber"/>
             </task>
             <task id="11" uid="76a065bf381c4ddeb9a157a9343f70f7" name="spock_2" shape="1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,1" meeting="false" start="2024-06-17" duration="5" complete="0" thirdDate="2024-05-27" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-06-24" duration="1" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" expand="true"/>
-        <task id="16" uid="3e4c033aa59e455497fffa4a9c49eba5" name="Docker" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true"/>
-        <task id="17" uid="9c87ba0f148b4d12bae4a98af9120c59" name="K8S" meeting="false" start="2024-05-27" duration="1" complete="0" expand="true"/>
-        <task id="18" uid="ed22262d65d0401696f5ce3f12ba5c87" name="hamcrest" meeting="false" start="2024-05-27" duration="1" complete="0" thirdDate="2024-05-27" thirdDate-constraint="0" expand="true">
-            <notes><![CDATA[单元测试匹配工具]]></notes>
-        </task>
+        <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-06-24" duration="1" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" priority="0" expand="true"/>
+        <task id="16" uid="3e4c033aa59e455497fffa4a9c49eba5" name="Docker" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
+        <task id="17" uid="9c87ba0f148b4d12bae4a98af9120c59" name="K8S" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="郑左璋" function="Default:0" contacts="" phone=""/>
