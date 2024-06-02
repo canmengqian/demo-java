@@ -3,9 +3,10 @@ package groovy.basic
 import groovy.bean.User
 import groovy.util.logging.Slf4j
 import org.junit.jupiter.api.Test
+import spock.lang.Specification
 
 @Slf4j
-class StrTest {
+class StrTest extends Specification {
     @Test
     void testStr_1() {
         /*不进行插值：单引号,单引号组
@@ -83,5 +84,32 @@ class StrTest {
     class T {
         String name
         int age;
+    }
+
+    def "闭包重新计算"(){
+        given:
+        def name ="zhangsan"
+        when:
+        def str = "hello ${-> name}"
+        log.info("str = ${str}")
+        and: "重新赋值"
+        name = "lisi"
+        then:
+        log.info("str = ${str}")
+        verifyAll {
+            str == "hello lisi"
+            str == "hello zhangsan"
+        }
+    }
+    def "GString 和String hashCode 比较"(){
+        given:
+        def str = "hello zhangsan"
+        def name ="zhangsan"
+        def gString = "hello ${name}"
+        when:
+        def bool = str.hashCode() == gString.hashCode()
+        then:
+        log.info("bool = ${bool}")
+        bool == true
     }
 }

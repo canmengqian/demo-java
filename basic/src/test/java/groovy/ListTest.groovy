@@ -3,9 +3,10 @@ package groovy
 import groovy.util.logging.Slf4j
 import io.vavr.control.Try
 import org.junit.jupiter.api.Test
+import spock.lang.Specification
 
 @Slf4j
-class ListTest {
+class ListTest extends Specification {
     @Test
     void testList_init() {
         /*显示声明列表类型*/
@@ -50,7 +51,7 @@ class ListTest {
     @Test
     void testList_2() {
         /*初始化列表*/
-        def list = [0,1,2,3,4]
+        def list = [0, 1, 2, 3, 4]
         /*只能作为一个元素添加*/
         //def  list2 = [0..4]
         /*不可变的列表*/
@@ -64,17 +65,35 @@ class ListTest {
         /*转换为不可变列表*/
         def list2 = list.asImmutable()
         Try.of { list.add(11) }
-                .onSuccess { log.info("list 添加成功: ${list.size()}")}
+                .onSuccess { log.info("list 添加成功: ${list.size()}") }
                 .onFailure { log.info("list 添加失败") }
         Try.of { list2.add(1) }.onFailure { log.info("list2 添加失败") }
         /*转换为不可变列表*/
-        def list3=list.asUnmodifiable()
+        def list3 = list.asUnmodifiable()
         Try.of { list3.add(11) }.onFailure { log.info("list3 添加失败") }
         /*转换为同步列表*/
         list.asSynchronized()
         /*反转列表*/
         log.info("原始列表:${list},反转列表:${list.reverse()}")
-       Integer max = list.grep({ it % 2 == 0 }).max()
+        Integer max = list.grep({ it % 2 == 0 }).max()
         log.info("最大偶数:${max}")
+    }
+
+    def "列表存储任意类型"() {
+        given:
+        def list = [1, "2", 3.0, true, null]
+        list = list as LinkedList
+        expect:
+        // 追加值
+        list << 4
+        verifyAll {
+            list.size() == 5
+            list[0] == 1
+            list[1] == "2"
+            list[2] == 3.0
+            list[3] == true
+            list[4] == null
+            list instanceof LinkedList
+        }
     }
 }

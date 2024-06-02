@@ -3,13 +3,14 @@ package groovy.bean
 import groovy.transform.ToString
 import groovy.transform.builder.Builder
 import org.junit.jupiter.api.Test
+import spock.lang.Specification
 
 import java.util.logging.Logger
 
 @ToString
 @Builder
 @Newify(User)
-class User {
+class User  extends Specification{
     private Logger log = Logger.getLogger(User.class.getName());
     String name
     int age
@@ -35,5 +36,14 @@ class User {
             sex = "man"
         }
         log.info("name = ${u.name}, age = ${u.age}, sex = ${u.sex}")
+    }
+
+    def "缺失属性安全访问符号"(){
+        given:
+        def user = new User(name:"zhangsan",age:18)
+        when:
+        def id = user?.id;
+        then:
+        thrown(MissingPropertyException)
     }
 }
