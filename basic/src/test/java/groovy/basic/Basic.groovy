@@ -3,13 +3,15 @@ package groovy.basic
 import cn.hutool.core.text.CharSequenceUtil
 import lombok.extern.slf4j.Slf4j
 import org.junit.jupiter.api.Test
+import spock.lang.Specification
 
 import java.util.logging.Level
 import java.util.logging.Logger
 
 @Slf4j
-class Basic {
+class Basic extends Specification {
     private static final Logger log = Logger.getLogger(Basic.class.getName());
+
     void basic() {
         /*打印语句*/
         println "Hello World!"
@@ -18,6 +20,7 @@ class Basic {
         def b = "2";
         log.info("a = ${a}, b = ${b}")
     }
+
     @Test
     void dataType() {
         int a = 1;
@@ -35,18 +38,18 @@ class Basic {
         log.info("数据类型转换 asInt = ${asInt}")
         def asLong = asInt as long;
         log.info("数据类型转换 asLong = ${asLong}")
-        def asStr =asLong as String;
+        def asStr = asLong as String;
         log.info("数据类型转换 asStr = ${asStr}")
         String nullStr = null;
-        Integer asInt2=0;
+        Integer asInt2 = 0;
         try {
-            if(CharSequenceUtil.isNotBlank(nullStr)){
-                asInt2= nullStr as int;
-            }else{
+            if (CharSequenceUtil.isNotBlank(nullStr)) {
+                asInt2 = nullStr as int;
+            } else {
                 log.warning("字符串转整形 失败")
-                asInt2= -99
+                asInt2 = -99
             }
-        }catch (NullPointerException  _e){
+        } catch (NullPointerException _e) {
             log.logp(Level.WARNING, "Basic", "range", "数据类型转换 asInt2 = ${asInt2}", _e)
         }
         log.info("数据类型转换 asInt2 = ${asInt2}")
@@ -54,12 +57,13 @@ class Basic {
     /**
      * 范围运算
      */
-    void range(){
-        def  range = 1..10;
+    void range() {
+        def range = 1..10;
         log.info("范围运算 range = ${range}")
     }
+
     @Test
-    void test(){
+    void test() {
         Basic basic = new Basic();
         /*打印语句*/
         basic.basic();
@@ -67,5 +71,17 @@ class Basic {
         basic.dataType();
         /* 范围运算*/
         basic.range();
+    }
+
+    def "三目运算符简化测试"() {
+        given:
+        def str = "zhangsan"
+        when:
+        def result = str ?: "lisi"
+        log.info("result = ${result}")
+        then:
+        verifyAll {
+            result == "zhangsan"
+        }
     }
 }
