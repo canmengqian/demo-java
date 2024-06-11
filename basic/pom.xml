@@ -34,6 +34,11 @@
             <version>2.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15to18</artifactId>
+            <version>1.66</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.spockframework/spock-core -->
         <dependency>
