@@ -1,7 +1,9 @@
 package groovy.basic
 
 import cn.hutool.core.text.CharSequenceUtil
+import groovy.bean.User
 import lombok.extern.slf4j.Slf4j
+import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
 import spock.lang.Specification
 
@@ -84,4 +86,58 @@ class Basic extends Specification {
             result == "zhangsan"
         }
     }
+
+    def "三目运算符"() {
+        given:
+        def user = new User()
+        when:
+        def name = user.name ?: ""
+        name = name.toUpperCase()
+        then:
+        verifyAll {
+            Matchers.notNullValue().matches(name)
+        }
+    }
+
+    def "多层次数据访问"() {
+        given:
+        def arr = [
+                [a: "name"],
+                [b: "age"],
+                [c: "sex"],
+        ]
+        when:
+        def result = arr.a[0]
+        log.info("result = ${result}")
+        then:
+        verifyAll {
+            result == "name"
+        }
+    }
+
+    def "switch模式匹配"() {
+        given:
+        def a = 1..3
+
+        when:
+        def rs
+        switch (a) {
+            case 1..3:
+                rs = "range"
+                break
+            case "1":
+                rs = "1"
+                break
+            case 1:
+                rs = "num"
+                break
+        }
+
+        then:
+        verifyAll {
+            rs == "range"
+        }
+    }
+
+
 }

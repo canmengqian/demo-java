@@ -40,4 +40,37 @@ class ClosureTest extends Specification {
         }
 
     }
+
+    def "测试闭包隐含参数"(){
+        given:
+        def greeting = {
+                log.info("hello ${it}")
+            return it
+        }
+        def user = "Tom"
+        when:
+        def rs = greeting(user)
+        then:
+        verifyAll {
+            rs == "Tom"
+        }
+    }
+    def "可变长参数闭包"(){
+        given:
+        def sum = {
+            int... args ->
+                log.info("args = ${args}")
+                def sum = 0
+                for (int i = 0; i < args.length; i++) {
+                    sum += args[i]
+                }
+                return sum
+        }
+        when:
+        def rs = sum(1,2,3,4,5)
+        then:
+        verifyAll {
+            rs == 15
+        }
+    }
 }
