@@ -64,6 +64,16 @@
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.oshai/kotlin-logging -->
+        <!-- https://mvnrepository.com/artifact/io.github.oshai/kotlin-logging -->
+        <dependency>
+            <groupId>io.github.oshai</groupId>
+            <artifactId>kotlin-logging</artifactId>
+            <version>6.0.3</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>

@@ -1,10 +1,12 @@
 package groovy
 
 import groovy.bean.User
+import groovy.transform.TypeChecked
 import groovy.util.logging.Slf4j
 import spock.lang.Specification
 
 @Slf4j
+@TypeChecked
 class ClosureTest extends Specification {
     def "闭包测试"() {
         given:

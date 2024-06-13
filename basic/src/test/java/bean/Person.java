@@ -26,7 +26,8 @@ public class Person implements Cloneable, Serializable {
     Addr addr;
     BigDecimal salary;
     Date birthday;
-    Map<String,String> extProps;
+    Map<String, String> extProps;
+
     public Person(String name) {
         this.name = name;
     }
