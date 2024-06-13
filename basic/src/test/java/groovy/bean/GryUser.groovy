@@ -10,9 +10,9 @@ import java.util.logging.Logger
 
 @ToString
 @Builder
-@Newify(User)
-class User extends Specification {
-    private Logger log = Logger.getLogger(User.class.getName());
+@Newify(GryUser)
+class GryUser extends Specification {
+    private Logger log = Logger.getLogger(GryUser.class.getName());
     String name
     int age
     String sex
@@ -26,23 +26,23 @@ class User extends Specification {
         return country
     }
 
-    def static printUserInfo(User u) {
+    def static printUserInfo(GryUser u) {
         println "name = ${u.name}, age = ${u.age}, sex = ${u.sex}"
     }
 
     @Test
     void testUserInfo() {
-        User user1 = builder().name("zhangsan").age(23).sex("man").build();
+        GryUser user1 = builder().name("zhangsan").age(23).sex("man").build();
         log.info("name = ${user1.name}, age = ${user1.age}, sex = ${user1.sex}")
 
-        User user = new User();
+        GryUser user = new GryUser();
 
         user.setAge(24);
         user.setName("zhangsan")
         user.setSex("man")
         println "name = ${user.name}, age = ${user.age}, sex = ${user.sex}"
 
-        def u = User()
+        def u = GryUser()
         u.with {
             name = "zhangsan"
             age = 24
@@ -53,7 +53,7 @@ class User extends Specification {
 
     def "缺失属性安全访问符号"() {
         given:
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         when:
         def id = user?.id;
         then:
@@ -62,7 +62,7 @@ class User extends Specification {
 
     def "直接访问属性操作符"() {
         given:
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         log.info("用户所处国家:${user.getCountry()}")
         def country = user.country;
         log.info("用户所处国家:${user.country}")
@@ -73,8 +73,8 @@ class User extends Specification {
 
     def "使用&符号表述方法引用"() {
         given:
-        def u1 = new User(name: "zhangsan", age: 18)
-        def u2 = new User(name: "lisi", age: 19)
+        def u1 = new GryUser(name: "zhangsan", age: 18)
+        def u2 = new GryUser(name: "lisi", age: 19)
         def list = [u1, u2]
         list.each {u->u.&printUserInfo}
         list.forEach { this.&printUserInfo }

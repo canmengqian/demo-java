@@ -1,9 +1,7 @@
 package demojava.io;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.util.io.IOUtil;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 

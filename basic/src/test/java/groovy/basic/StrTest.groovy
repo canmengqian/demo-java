@@ -1,6 +1,6 @@
 package groovy.basic
 
-import groovy.bean.User
+import groovy.bean.GryUser
 import groovy.util.logging.Slf4j
 import org.junit.jupiter.api.Test
 import spock.lang.Specification
@@ -32,7 +32,7 @@ class StrTest extends Specification {
         log.info("变量占位 str5 = ${str5}")
 
         /*对象访问*/
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         def str6 = "name = $user.name, age = $user.age"
         log.info("对象访问 str6 = ${str6}")
 

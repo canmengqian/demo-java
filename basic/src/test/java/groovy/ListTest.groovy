@@ -1,6 +1,6 @@
 package groovy
 
-import groovy.bean.User
+import groovy.bean.GryUser
 import groovy.util.logging.Slf4j
 import io.vavr.control.Try
 import org.junit.jupiter.api.Test
@@ -100,7 +100,7 @@ class ListTest extends Specification {
 
     def "获取列表里对象的某个属性"() {
         given:
-        def list = [new User(name: "zhangsan", age: 18), new User(name: "lisi", age: 20)]
+        def list = [new GryUser(name: "zhangsan", age: 18), new GryUser(name: "lisi", age: 20)]
         when: "类似于java的 toMap().collect"
         def names = list*.name
         then:

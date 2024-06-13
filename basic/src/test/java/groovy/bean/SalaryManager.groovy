@@ -8,7 +8,7 @@ import groovy.util.logging.Slf4j
  */
 @Slf4j
 class SalaryManager {
-    def giveSalary(User user) {
+    def giveSalary(GryUser user) {
         def salary = user.name.length() * 100
         log.info("给${user.name}发放了${salary}元工资")
         return salary

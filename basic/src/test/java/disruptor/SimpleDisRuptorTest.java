@@ -5,7 +5,6 @@ import cn.hutool.core.util.RandomUtil;
 import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.EventFactory;
 import com.lmax.disruptor.EventHandler;
-import com.lmax.disruptor.EventTranslator;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
 import lombok.AllArgsConstructor;
@@ -14,7 +13,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import sun.misc.Unsafe;
 
 @Slf4j
 public class SimpleDisRuptorTest {

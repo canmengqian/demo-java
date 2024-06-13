@@ -1,21 +1,21 @@
 package groovy
 
-import groovy.bean.User
+import groovy.bean.GryUser
 import groovy.transform.TypeChecked
 import groovy.util.logging.Slf4j
 import spock.lang.Specification
 
 @Slf4j
 @TypeChecked
-class ClosureTest extends Specification {
+class GryClosureTest extends Specification {
     def "闭包测试"() {
         given:
         def closure = {
-            User u ->
+            GryUser u ->
                 log.info("name = ${u.name}, age = ${u.age}, sex = ${u.sex}")
         }
         and:
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         when:
         closure.call(user)
         closure(user)
@@ -31,7 +31,7 @@ class ClosureTest extends Specification {
                 return sex
         }
         and:
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         when:
         def rs = closure.call(user.name, user.age)
         def rs1 = closure(user.name, user.age)

@@ -1,6 +1,6 @@
 package groovy.spock
 
-import groovy.bean.User
+import groovy.bean.GryUser
 import spock.lang.Specification
 
 class verifyAllTest extends Specification {
@@ -14,6 +14,6 @@ class verifyAllTest extends Specification {
         }
         where:
         user_1                     | user_2
-        new User(name: "zhangsan") | new User(name: "q")
+        new GryUser(name: "zhangsan") | new GryUser(name: "q")
     }
 }

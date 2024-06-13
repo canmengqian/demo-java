@@ -1,13 +1,11 @@
 package demojava.zip;
 
 import cn.hutool.core.io.FileUtil;
+import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.util.io.IOUtil;
-import org.springframework.util.FileSystemUtils;
+
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.zip.GZIPInputStream;
@@ -42,7 +40,7 @@ public class ZipFileTest {
             // 读取文件
             if (!e.isDirectory()) {
                 InputStream is = zip.getInputStream(e);
-                Collection<String> sts = IOUtil.readLines(is);
+                Collection<String> sts = IOUtils.readLines(is, "UTF-8");
                 sts.forEach(System.out::println);
             }
         }

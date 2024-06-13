@@ -1,7 +1,7 @@
 package groovy.basic
 
 import cn.hutool.core.text.CharSequenceUtil
-import groovy.bean.User
+import groovy.bean.*
 import lombok.extern.slf4j.Slf4j
 import org.hamcrest.Matchers
 import org.junit.jupiter.api.Test
@@ -89,7 +89,7 @@ class Basic extends Specification {
 
     def "三目运算符"() {
         given:
-        def user = new User()
+        def user = new GryUser(name: "zhangsan")
         when:
         def name = user.name ?: ""
         name = name.toUpperCase()

@@ -1,13 +1,9 @@
 package groovy.spock
 
+import groovy.bean.GryUser
 import groovy.bean.SalaryManager
-import groovy.bean.User
 import groovy.util.logging.Slf4j
-import spock.lang.Shared
-import spock.lang.Specification
-import spock.lang.Subject
-import spock.lang.Title
-import spock.lang.Unroll
+import spock.lang.*
 
 /**
  * 针对except的测试
@@ -17,7 +13,7 @@ import spock.lang.Unroll
 @Slf4j
 class ExceptTest extends Specification {
     @Shared
-    User user = new User(name: "zhangsan");
+    GryUser user = new GryUser(name: "zhangsan")
 
     def "单一 given-when-then模式"() {
         given: "简单的bool值,此处为文档注释"
@@ -67,7 +63,7 @@ class ExceptTest extends Specification {
         expect:
         verifyAll {
             salaryManager.giveSalary(user) == 20
-            salaryManager.giveSalary(new User(name: "lisi")) == 30
+            salaryManager.giveSalary(new GryUser(name: "lisi")) == 30
         }
     }
 
@@ -79,9 +75,9 @@ class ExceptTest extends Specification {
             user_2.name == "q"
         }
         where:
-        user_1                      | user_2
-        new User(name: "zhangsan")  | new User(name: "q")
-        new User(name: "zhangsan1") | new User(name: "lisi")
+        user_1                         | user_2
+        new GryUser(name: "zhangsan")  | new GryUser(name: "q")
+        new GryUser(name: "zhangsan1") | new GryUser(name: "lisi")
     }
 
 
@@ -94,12 +90,12 @@ class ExceptTest extends Specification {
         log.info(e.getClass().getName());
 
         where:
-        user                       | exception
-        new User(name: "zhangsan") | IllegalArgumentException
-        new User(name: "lisi")     | NullPointerException
+        user                          | exception
+        new GryUser(name: "zhangsan") | IllegalArgumentException
+        new GryUser(name: "lisi")     | NullPointerException
     }
 
-    def getUser(User user) {
+    def getUser(GryUser user) {
         if (user.name.equals("zhangsan")) {
             throw new IllegalArgumentException()
         }

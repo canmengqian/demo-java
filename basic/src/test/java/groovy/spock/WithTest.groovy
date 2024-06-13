@@ -1,12 +1,13 @@
 package groovy.spock
 
-import groovy.bean.User
+
+import groovy.bean.GryUser
 import spock.lang.Specification
 
 class WithTest extends Specification {
     def "test with"() {
         given:
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         expect:
         with(user) {
             name == "zhangsan"
@@ -16,7 +17,7 @@ class WithTest extends Specification {
 
     def "第一个结果失败，后续验证不再执行"() {
         given:
-        def user = new User(name: "zhangsan", age: 18)
+        def user = new GryUser(name: "zhangsan", age: 18)
         expect:
         with(user) {
             name == "lisi"
@@ -26,7 +27,7 @@ class WithTest extends Specification {
 
     def "软断言不中断测试"() {
         given:
-        def user = new User(name: "zhangsan", age: 18, sex: "man")
+        def user = new GryUser(name: "zhangsan", age: 18, sex: "man")
         expect:
         verifyAll {
             user.sex == "wman"
