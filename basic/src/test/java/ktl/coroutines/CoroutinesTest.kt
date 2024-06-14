@@ -1,6 +1,11 @@
 package ktl.coroutines
 
-import kotlinx.coroutines.*
+
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+
 import org.junit.jupiter.api.Test
 
 /**

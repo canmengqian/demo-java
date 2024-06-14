@@ -3,18 +3,18 @@ package ktl.obj;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class JavaChild extends Person {
-    @Override
+public class JavaChild  {
+   // @Override
     public void play() {
         log.info("我是Java类，玩玩具");
     }
 
-    @Override
+   // @Override
     public void humanTalking() {
         log.info("我是Java类，不会说话");
     }
 
-    @Override
+    //@Override
     public void doSomething() {
         log.info("我是Java类，不会做事情");
     }
