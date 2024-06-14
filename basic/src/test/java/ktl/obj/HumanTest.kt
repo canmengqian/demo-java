@@ -1,4 +1,4 @@
-package ktl.`object`
+package ktl.obj
 
 import org.junit.jupiter.api.Test
 

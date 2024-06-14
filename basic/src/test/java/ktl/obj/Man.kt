@@ -1,10 +1,10 @@
-package ktl.`object`
+package ktl.obj
 
 import lombok.Data
 import org.junit.jupiter.api.Test
 
 @Data
-class Man:Person{
+class Man: Person {
     constructor(){
 
     }

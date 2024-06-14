@@ -1,4 +1,4 @@
-package ktl.`object`
+package ktl.obj
 
 class Woman : Person() {
     override fun play() {

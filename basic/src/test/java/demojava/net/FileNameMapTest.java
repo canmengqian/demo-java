@@ -1,12 +1,5 @@
 package demojava.net;
 
-import org.junit.jupiter.api.Test;
-//import sun.net.www.MimeTable;
-
-import javax.activation.MimetypesFileTypeMap;
-import java.net.FileNameMap;
-import java.net.URLConnection;
-
 /**
  * @author zhengzz
  * @version 1.0.0

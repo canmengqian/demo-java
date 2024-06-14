@@ -1,4 +1,4 @@
-package ktl.`object`
+package ktl.obj
 
 interface Human {
     fun humanTalking()
