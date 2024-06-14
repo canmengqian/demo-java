@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-06-11" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-06-14" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
     <description/>
     <view zooming-state="default:1" id="gantt-chart">
         <field id="tpd3" name="名称" width="206" order="0"/>
@@ -74,7 +74,8 @@
 1. 伴生对象
 2. also,let,with,apply,run函数
 3.?.可空声明和可空方法调用
-4. !!. 强制非空断言访问符号]]></notes>
+4. !!. 强制非空断言访问符号
+5 ?: 为null时操作符号]]></notes>
         </task>
         <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-06-24" duration="1" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" priority="0" expand="true"/>
         <task id="16" uid="3e4c033aa59e455497fffa4a9c49eba5" name="Docker" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
