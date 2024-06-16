@@ -1,6 +1,7 @@
 package demojava.lang.reflect;
 
-import bean.Person;
+
+import bean.JaPerson;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -23,8 +24,8 @@ public class ArrayTest {
         System.out.println(Array.getInt(ints, 0));
         Arrays.stream(ints).forEach(System.out::println);
 
-        Person[] ps = (Person[]) Array.newInstance(getClazz(new Person()), 10);
-        Array.set(ps, 0, new Person("李四"));
+        JaPerson[] ps = (JaPerson[]) Array.newInstance(getClazz(new JaPerson()), 10);
+        Array.set(ps, 0, new JaPerson("李四"));
         log.info("人物信息:{}", Array.get(ps, 0).toString());
     }
 

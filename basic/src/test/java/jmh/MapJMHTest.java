@@ -1,12 +1,9 @@
 package jmh;
 
-import bean.Person;
+
+import bean.JaPerson;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.RunnerException;
-import org.openjdk.jmh.runner.options.Options;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -29,18 +26,18 @@ public class MapJMHTest {
 
     @Benchmark
     public void testFastUtil() {
-        Map<String, Person> map1 = new Object2ObjectArrayMap<String, Person>();
+        Map<String, JaPerson> map1 = new Object2ObjectArrayMap<String, JaPerson>();
         for (long i = 0; i < counter; i++) {
-            map1.put("" + i, new Person("2"));
+            map1.put("" + i, new JaPerson());
         }
 
     }
 
-    public static void main(String[] args) throws RunnerException {
+   /* public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
                 .include(MapJMHTest.class.getSimpleName())
                 .build();
         new Runner(options).run();
-    }
+    }*/
 
 }

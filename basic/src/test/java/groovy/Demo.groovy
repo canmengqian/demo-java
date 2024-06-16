@@ -4,7 +4,7 @@ class Demo {
     void sayHello() {
         printf "Hello World!"
     }
-    static void main(String[] args) {
+   /* static void main(String[] args) {
         printf "Hello World!"
-    }
+    }*/
 }

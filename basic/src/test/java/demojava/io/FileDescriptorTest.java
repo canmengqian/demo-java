@@ -31,11 +31,11 @@ public class FileDescriptorTest {
         Reader reader = new FileReader(fi.getFD());
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
             String s = scanner.next();
             System.out.println(s);
         }
-    }
+    }*/
 }

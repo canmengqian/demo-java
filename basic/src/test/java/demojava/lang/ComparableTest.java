@@ -19,9 +19,7 @@ public class ComparableTest {
 
 
 
-    public static void main(String[] args) {
-        System.out.println (ComparableTest.age);
-    }
+
     @Test
     void  test(){
         // 对数字排序

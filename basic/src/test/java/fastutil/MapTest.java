@@ -1,7 +1,7 @@
 package fastutil;
 
+import bean.JaPerson;
 import cn.hutool.core.date.StopWatch;
-import bean.Person;
 import it.unimi.dsi.fastutil.objects.Object2ObjectAVLTreeMap;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ public class MapTest {
         map.put('a', new Person("a"));*/
 
 
-        Map<String, Person> map2 = new HashMap<>();
+        Map<String, JaPerson> map2 = new HashMap<>();
         StopWatch stopWatch1 = new StopWatch();
         stopWatch1.start();
         /*for (long i = 0; i < counter; i++) {
@@ -41,12 +41,12 @@ public class MapTest {
         }*/
         stopWatch2.stop();
         log.info("koloboke 耗时：{}", stopWatch2.getTotalTimeMillis());
-        Map<String, Person> map1 = new Object2ObjectAVLTreeMap<>();
+        Map<String, JaPerson> map1 = new Object2ObjectAVLTreeMap<>();
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
 
         for (long i = 0; i < counter; i++) {
-            map1.put("" + i, new Person("2"));
+            map1.put("" + i, new JaPerson("2"));
         }
         stopWatch.stop();
         log.info("fastutil 耗时：{}", stopWatch.getTotalTimeMillis());

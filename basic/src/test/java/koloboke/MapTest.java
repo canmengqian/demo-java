@@ -1,9 +1,9 @@
 package koloboke;
 
+import bean.JaPerson;
 import com.koloboke.collect.map.hash.HashCharObjMap;
 import com.koloboke.collect.map.hash.HashCharObjMaps;
 import com.koloboke.collect.map.hash.HashObjObjMaps;
-import bean.Person;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -18,12 +18,12 @@ import java.util.Map;
 public class MapTest {
     @Test
     void test() {
-        HashCharObjMap<Person> map = HashCharObjMaps.newMutableMap();
-        map.put('a', new Person());
+        HashCharObjMap<JaPerson> map = HashCharObjMaps.newMutableMap();
+        map.put('a', new JaPerson());
         System.out.println(map.toString());
 
-        Map<String, Person> map2 = HashObjObjMaps.newMutableMap();
-        map2.put("1", new Person("1"));
+        Map<String, JaPerson> map2 = HashObjObjMaps.newMutableMap();
+        map2.put("1", new JaPerson("1"));
         System.out.println(map2);
     }
 }

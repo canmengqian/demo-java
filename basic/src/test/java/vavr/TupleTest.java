@@ -1,6 +1,7 @@
 package vavr;
 
-import bean.Person;
+
+import bean.JaPerson;
 import io.vavr.*;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,7 @@ public class TupleTest {
 
     @Test
     void test() {
-        Tuple2<Integer, Person> tuple2 = Tuple.of(1, new Person("张三"));
+        Tuple2<Integer, JaPerson> tuple2 = Tuple.of(1, new JaPerson("张三"));
         System.out.println(tuple2._1);
 
         // 无法直接进行赋值，但是可以通过set方法进行修改值
@@ -29,7 +30,7 @@ public class TupleTest {
         System.out.println ("更新后元素的值为:"+tuple2._1);
         // 反转元素
         // map处理
-     Tuple2<String,Person> newP=   tuple2.map1 (n->String.valueOf (n));
+     Tuple2<String,JaPerson> newP=   tuple2.map1 (n->String.valueOf (n));
 
         // 向前或向后追加
         // 转换为Seq

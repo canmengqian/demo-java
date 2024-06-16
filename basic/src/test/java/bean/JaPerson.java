@@ -21,14 +21,14 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Person implements Cloneable, Serializable {
+public class JaPerson implements Cloneable, Serializable {
     String name;
     Addr addr;
     BigDecimal salary;
     Date birthday;
     Map<String, String> extProps;
 
-    public Person(String name) {
+    public JaPerson(String name) {
         this.name = name;
     }
 }

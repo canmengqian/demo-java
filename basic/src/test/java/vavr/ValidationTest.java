@@ -1,6 +1,7 @@
 package vavr;
 
-import bean.Person;
+
+import bean.JaPerson;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;
 
@@ -13,7 +14,7 @@ import io.vavr.control.Validation;
  */
 public class ValidationTest {
     void test(){
-        Validation<Seq<String>, Person> validation = Validation.valid(new Person("lisi"));
+        Validation<Seq<String>, JaPerson> validation = Validation.valid(new JaPerson("lisi"));
         //validation.ap(new Validation.Valid<>());
     }
 }

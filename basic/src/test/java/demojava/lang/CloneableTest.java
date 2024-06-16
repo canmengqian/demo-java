@@ -1,7 +1,7 @@
 package demojava.lang;
 
 import bean.Addr;
-import bean.Person;
+import bean.JaPerson;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;
 import lombok.ToString;
@@ -25,7 +25,7 @@ import java.util.Map;
 public class CloneableTest {
     @Test
     void test() {
-        bean.Person person = new bean.Person();
+        bean.JaPerson person = new bean.JaPerson();
         person.setName("张三");
         person.setAddr(new Addr("杭州"));
         person.setSalary(new BigDecimal(10));
@@ -35,7 +35,7 @@ public class CloneableTest {
         person.setExtProps(extProps);
         log.info(person.toString());
         byte[] bs = SerializationUtils.serialize(person);
-        bean.Person p2 = (Person) SerializationUtils.deserialize(bs);
+        bean.JaPerson p2 = (JaPerson) SerializationUtils.deserialize(bs);
         log.info("serialize  p1:{},p2:{}", person.toString(), p2.toString());
         p2.getAddr().setLocation("南京");
         p2.setSalary(p2.getSalary().add(BigDecimal.valueOf(10)));

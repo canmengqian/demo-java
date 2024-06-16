@@ -186,8 +186,4 @@ public class SimpleJob implements Job {
         scheduler.triggerJob(jobDetailKey,dataMap);
         Thread.currentThread().join(3000);
     }
-
-    public static void main(String[] args) throws SchedulerException, InterruptedException {
-
-    }
 }
