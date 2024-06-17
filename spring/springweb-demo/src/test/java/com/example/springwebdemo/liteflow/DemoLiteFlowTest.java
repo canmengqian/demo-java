@@ -6,7 +6,7 @@ import com.yomahub.liteflow.flow.LiteflowResponse;
 import com.yomahub.liteflow.slot.DefaultContext;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
