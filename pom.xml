@@ -284,6 +284,12 @@
             <artifactId>commons-codec</artifactId>
             <version>1.17.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kandy-api -->
+        <dependency>
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kandy-api</artifactId>
+            <version>0.6.0</version>
+        </dependency>
 
 
     </dependencies>
