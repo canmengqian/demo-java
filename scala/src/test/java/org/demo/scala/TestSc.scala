@@ -1,6 +1,6 @@
 package org.demo.scala
 
-import org.junit.jupiter.api.Test
+import org.testng.annotations.Test
 @Test
 class TestSc {
   

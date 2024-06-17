@@ -1,7 +1,7 @@
 package com.quarkus;
 
 import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;

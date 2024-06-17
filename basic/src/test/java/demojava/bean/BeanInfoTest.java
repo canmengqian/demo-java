@@ -17,7 +17,7 @@ import java.text.MessageFormat;
  * @date 2023/5/30
  */
 public class BeanInfoTest {
-    @Test
+   @Test
     public void test() throws IntrospectionException {
         BeanInfo beanInfo = Introspector.getBeanInfo(Person.class);
         // 获取bean描述器
