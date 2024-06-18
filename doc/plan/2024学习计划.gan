@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-05-19" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-05-24" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
     <description/>
     <view zooming-state="default:1" id="gantt-chart">
         <field id="tpd3" name="名称" width="206" order="0"/>
@@ -13,7 +13,7 @@
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
         <option id="filter.inProgressTodayTasks" value="false"/>
-        <timeline><![CDATA[18,5,2,3]]></timeline>
+        <timeline><![CDATA[18,3]]></timeline>
         <option id="color.recent"><![CDATA[#006600 #fcab22 #eed420 #d6d9df #f0d11f #0066cc #999900 #00cccc #666666 #009999]]></option>
     </view>
     <view id="resource-table">
@@ -44,8 +44,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="5" uid="1e4e4fad55294c27a6b9287e0562a718" name="公司内部技术" color="#990099" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-28" duration="149" complete="0" thirdDate="2024-05-20" thirdDate-constraint="0" expand="true"/>
-        <task id="7" uid="c6c593c9e15f40198bda90b6e30a374f" name="Servlet" color="#999900" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-28" duration="84" complete="0" thirdDate="2024-05-28" thirdDate-constraint="0" expand="true"/>
+        <task id="7" uid="c6c593c9e15f40198bda90b6e30a374f" name="Servlet" color="#999900" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2024-05-10" duration="7" complete="50" thirdDate="2024-05-28" thirdDate-constraint="0" expand="true"/>
         <task id="13" uid="b288b073fc6d47dab44046052038bc9c" name="JDK" meeting="false" start="2024-05-20" duration="1" complete="0" expand="false">
             <task id="14" uid="5d41e56d1e7b4948ba6f5dfc68aaf9c3" name="网络编程" meeting="false" start="2024-05-20" duration="1" complete="0" thirdDate="2024-05-20" thirdDate-constraint="0" priority="3" expand="true"/>
         </task>
@@ -78,9 +77,16 @@
 1. 枚举类使用
 2. 对象属性解构
 20240617
-1.对象属性解构]]></notes>
+1.对象属性解构
+2. 接口委托,属性委托,lazy委托
+3.扩展方法,扩展属性
+4. 数据类
+20240618
+1.单例类
+2.泛型]]></notes>
         </task>
-        <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-06-24" duration="1" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" priority="0" expand="true"/>
+        <task id="19" uid="c605e3851742440eade4ed99255174b7" name="python基础语法" meeting="false" start="2024-07-02" duration="44" complete="0" priority="0" expand="true"/>
+        <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-12-02" duration="22" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" priority="0" expand="true"/>
         <task id="16" uid="3e4c033aa59e455497fffa4a9c49eba5" name="Docker" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
         <task id="17" uid="9c87ba0f148b4d12bae4a98af9120c59" name="K8S" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
     </tasks>
@@ -91,6 +97,7 @@
         <allocation task-id="10" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="3" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
         <allocation task-id="18" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
