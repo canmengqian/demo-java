@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-05-24" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-06-17" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
     <description/>
-    <view zooming-state="default:1" id="gantt-chart">
+    <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="名称" width="206" order="0"/>
         <field id="tpd4" name="开始日期" width="169" order="1"/>
         <field id="tpd5" name="结束日期" width="249" order="2"/>
