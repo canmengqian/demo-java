@@ -7,18 +7,16 @@
         <field id="tpd6" name="持续" width="137" order="3"/>
         <field id="tpd7" name="完成" width="93" order="4"/>
         <field id="tpd1" name="优先级" width="86" order="5"/>
-        <option id="taskLabelUp" value="predecessors"/>
-        <option id="taskLabelDown" value="coordinator"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
         <option id="filter.inProgressTodayTasks" value="false"/>
-        <timeline><![CDATA[18,5,2,3]]></timeline>
+        <timeline><![CDATA[3,5,18]]></timeline>
         <option id="color.recent"><![CDATA[#006600 #fcab22 #eed420 #d6d9df #f0d11f #0066cc #999900 #00cccc #666666 #009999]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="名称" width="206" order="0"/>
-        <field id="1" name="默认角色" width="87" order="1"/>
+        <field id="0" name="名称" width="207" order="0"/>
+        <field id="1" name="默认角色" width="89" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -78,7 +76,10 @@
 1. 枚举类使用
 2. 对象属性解构
 20240617
-1.对象属性解构]]></notes>
+1.对象属性解构
+2.单例类
+20240618
+1. 单例模式]]></notes>
         </task>
         <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-06-24" duration="1" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" priority="0" expand="true"/>
         <task id="16" uid="3e4c033aa59e455497fffa4a9c49eba5" name="Docker" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
