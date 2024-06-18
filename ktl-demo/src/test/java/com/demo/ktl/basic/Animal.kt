@@ -1,15 +1,12 @@
 package com.demo.ktl.basic
 
 
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import org.jetbrains.kotlinx.dataframe.AnyFrame
 import org.jetbrains.kotlinx.dataframe.api.dataFrameOf
 import org.jetbrains.kotlinx.dataframe.api.forEach
 import org.jetbrains.kotlinx.dataframe.api.head
 import org.junit.jupiter.api.Test
 import org.slf4j.Logger
-
 import java.io.Serializable
 
 class Animal : Serializable {
