@@ -194,5 +194,15 @@ class CoroutinesTest {
         }
     }
 
+    @Test
+    fun test_异常处理器(){
+        runBlocking {
+            val handler = CoroutineExceptionHandler { _, throwable ->
+                println("exception:${throwable.message}")
+            }
+            launch { println("hello") }
+        }
+    }
+
 
 }
