@@ -53,16 +53,16 @@ class Animal : Serializable {
     @Test
     fun test_扩展函数引用() {
         // 全局扩展函数可以被引用
-        com.demo.ktl.basic.Animal::logger.invoke(this).info("hello")
+        Animal::logger.invoke(this).info("hello")
     }
 
 
     @Test
     fun test_类内部成员函数引用赋值() {
 
-        val v1: (com.demo.ktl.basic.Animal, String) -> String = com.demo.ktl.basic.Animal::getNameByType
+        val v1: (Animal, String) -> String = Animal::getNameByType
         v1.invoke(this, "cat")
-        val v2: com.demo.ktl.basic.Animal.(String) -> String = com.demo.ktl.basic.Animal::getNameByType
+        val v2: Animal.(String) -> String = Animal::getNameByType
         v2.invoke(this, "cat")
         // 显示Receiver函数引用赋值
         val v3: (String) -> String = ::getNameByType
@@ -73,10 +73,10 @@ class Animal : Serializable {
     @Test
     fun test_全局扩展函数赋值() {
         // 显示Receiver函数引用赋值
-        val v1: com.demo.ktl.basic.Animal.() -> Logger = com.demo.ktl.basic.Animal::logger
+        val v1: Animal.() -> Logger = Animal::logger
         v1.invoke(this).info("hello v1")
         // 隐式Receiver函数引用赋值
-        val v2: (com.demo.ktl.basic.Animal) -> Logger = com.demo.ktl.basic.Animal::logger
+        val v2: (Animal) -> Logger = Animal::logger
         v2.invoke(this).info("hello v2")
         //TODO 这是什么写法
         val v3: () -> Logger = ::logger

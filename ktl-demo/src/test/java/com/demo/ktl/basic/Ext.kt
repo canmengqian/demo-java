@@ -1,13 +1,15 @@
 package com.demo.ktl.basic
 
+
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.io.Serializable
 
 fun Serializable.logger(): Logger {
-    return LoggerFactory.getLogger(this.javaClass)
+    return LoggerFactory.getILoggerFactory().getLogger(this.javaClass.name);
 }
-fun Serializable.abs(n:Double): Double{
+
+fun Serializable.abs(n: Double): Double {
     return Math.abs(n)
 }
 
