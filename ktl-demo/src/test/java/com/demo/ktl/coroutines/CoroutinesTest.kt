@@ -4,6 +4,7 @@ package com.demo.ktl.coroutines
 import kotlinx.coroutines.*
 
 import org.testng.annotations.Test
+import kotlin.coroutines.CoroutineContext
 
 /**
  * 协程测试
@@ -194,5 +195,97 @@ class CoroutinesTest {
         }
     }
 
+    //===================runBlocking=====================
+    @OptIn(DelicateCoroutinesApi::class)
+    @Test
+    fun test_CoroutineScope() {
+        val job = GlobalScope.launch { println("hello") }
+        job.start()
+        var rs: Deferred<Int>? = null
+        GlobalScope.async {
+            rs = GlobalScope.async {
+                println("hello async")
+                return@async 1
+            }
+            rs!!.start()
+        }
+        run {
+            GlobalScope.launch {
+                println("hello run")
+            }
+        }
 
+        Thread.currentThread().join(2000)
+    }
+
+    @Test
+    fun test_runBlocking_1() {
+        runBlocking(Dispatchers.Default) {
+            delay(1000)
+            println("${this.coroutineContext[Job]}")
+        }
+    }
+
+    @Test
+    fun test_runBlocking_2() {
+        // 声明为挂起函数
+        val s: suspend () -> Unit = suspend {
+            withContext(Dispatchers.Default) {
+                launch {
+                    println("${this.coroutineContext[Job]}")
+                }
+            }
+        }
+        let {
+            runBlocking {
+                s()
+            }
+        }
+    }
+
+    @Test
+    fun test_同步和异步的返回值() {
+        CoroutineScope(Dispatchers.Default).launch {
+            val job_1 = launch {
+                println("job_1")
+                1
+            }
+
+            val job_2 = async {
+                println("job_2")
+                return@async 2
+            }
+            println("job_1 ${job_1}")
+            println("job_2 ${job_2.await()}")
+        }
+        Thread.currentThread().join(2000)
+    }
+
+    // ================调度器
+    @OptIn(DelicateCoroutinesApi::class)
+    @Test
+    fun test_调度器_1() {
+        var dispatcher = Dispatchers.Default
+        runBlocking {
+            val job = launch(dispatcher) {
+                println("hello default")
+            }
+            job.start()
+        }
+        Dispatchers.shutdown()
+    }
+
+    @Test
+    fun test_线程切换_1() {
+        // 默认线程切换为IO线程
+        runBlocking(Dispatchers.Default) {
+            println("CPU 线程")
+            val job = withContext(Dispatchers.IO) {
+                println("IO ")
+                return@withContext 1
+            }
+            println(job)
+
+        }
+    }
 }
