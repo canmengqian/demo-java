@@ -1,8 +1,9 @@
 package com.demo.ktl.basic
 
 
-import org.testng.annotations.Test
+
 import java.io.Serializable
+import kotlin.test.Test
 
 open class Person : Biology, Serializable {
 

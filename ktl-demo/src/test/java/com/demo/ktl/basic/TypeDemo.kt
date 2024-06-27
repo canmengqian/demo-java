@@ -1,9 +1,10 @@
 package com.demo.ktl.basic
 
-import org.testng.annotations.Test
+
 import java.io.Serializable
 import kotlin.math.pow
 import kotlin.random.Random
+import kotlin.test.Test
 
 
 class TypeDemo : Serializable {
