@@ -1,7 +1,7 @@
 package com.demo.ktl.basic
 
+import kotlin.test.Test
 
-import org.testng.annotations.Test
 
 class Man : Person() {
     override fun walk() {

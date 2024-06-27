@@ -1,6 +1,7 @@
 package com.demo.ktl.obj
 
-import org.testng.annotations.Test
+import kotlin.test.Test
+
 
 class PersonTest {
 

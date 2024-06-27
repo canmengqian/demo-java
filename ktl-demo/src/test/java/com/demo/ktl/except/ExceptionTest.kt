@@ -1,7 +1,7 @@
 package com.demo.ktl.except
 
+import kotlin.test.Test
 
-import org.testng.annotations.Test
 
 class ExceptionTest {
     @Test

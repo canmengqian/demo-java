@@ -82,6 +82,7 @@ class RsaTest extends Specification {
         def rsa = RsaUtil.genKeyPair();
         when:
         def token = JWTUtil.createToken([name: "zhangsan", age: 18], '123'.getBytes())
+        println(token)
         def rs = JWTUtil.verify(token, '1'.getBytes())
         def rs1 = JWTUtil.verify(token, '123'.getBytes())
         def name = JWTUtil.parseToken(token).getPayload("name");

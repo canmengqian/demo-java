@@ -1,7 +1,7 @@
 package com.demo.ktl.obj
 
 import lombok.Data
-import org.testng.annotations.Test
+
 
 @Data
 class Man: Person {

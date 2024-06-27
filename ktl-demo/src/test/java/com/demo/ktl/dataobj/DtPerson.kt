@@ -2,7 +2,8 @@ package com.demo.ktl.dataobj
 
 import com.alibaba.fastjson.JSON
 import lombok.ToString
-import org.testng.annotations.Test
+import kotlin.test.Test
+
 
 data class DtPerson(
     var name: String,

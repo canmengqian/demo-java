@@ -1,6 +1,7 @@
 package com.demo.ktl.set
 
-import org.testng.annotations.Test
+import kotlin.test.Test
+
 
 class ListTest {
     @Test

@@ -1,6 +1,7 @@
 package com.demo.ktl.pkg
 
-import org.testng.annotations.Test
+
+import kotlin.test.Test
 import com.demo.ktl.basic.Animal as ani
 
 class PackageTest {

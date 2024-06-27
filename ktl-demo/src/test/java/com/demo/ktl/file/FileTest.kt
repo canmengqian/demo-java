@@ -1,7 +1,8 @@
 package com.demo.ktl.file
 
-import org.testng.annotations.Test
+
 import java.io.File
+import kotlin.test.Test
 
 /**
  * 文件读写

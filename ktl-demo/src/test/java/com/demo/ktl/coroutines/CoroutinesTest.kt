@@ -2,9 +2,8 @@ package com.demo.ktl.coroutines
 
 
 import kotlinx.coroutines.*
+import kotlin.test.Test
 
-import org.testng.annotations.Test
-import kotlin.coroutines.CoroutineContext
 
 /**
  * 协程测试
