@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-06-22" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="学习计划" company="" webLink="http://" view-date="2024-06-30" view-index="0" gantt-divider-location="941" resource-divider-location="300" version="3.3.3309" locale="zh_CN">
     <description/>
     <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="名称" width="232" order="0"/>
@@ -62,7 +62,7 @@
 1.文档梳理
 2.交互测试使用]]></notes>
         </task>
-        <task id="18" uid="4bb5cab5e2354f55b8e6d1546e534999" name="kotlin语法学习【基础】" color="#006600" meeting="false" start="2024-06-11" duration="14" complete="50" priority="2" expand="true">
+        <task id="18" uid="4bb5cab5e2354f55b8e6d1546e534999" name="kotlin语法学习【基础】" color="#006600" meeting="false" start="2024-06-11" duration="14" complete="70" priority="2" expand="true">
             <notes><![CDATA[20240613
 1. 集合学习, 列表,map
 2.学习类,伴生对象
@@ -96,7 +96,6 @@ suspend]]></notes>
             <depend id="21" type="2" difference="0" hardness="Strong"/>
         </task>
         <task id="21" uid="bf0d60ace08244b2981e00a4fcda41b4" name="kotlin项目实战" color="#006666" meeting="false" start="2024-07-22" duration="15" complete="0" thirdDate="2024-07-22" thirdDate-constraint="1" expand="true"/>
-        <task id="20" uid="4805a12e057e49bb90a25466a7343b96" name="泛型协变和逆变" meeting="false" start="2024-07-01" duration="8" complete="0" priority="0" expand="true"/>
         <task id="19" uid="c605e3851742440eade4ed99255174b7" name="python基础语法" meeting="false" start="2024-07-02" duration="44" complete="0" priority="0" expand="true"/>
         <task id="15" uid="d801f9d0dfca4c25a3b059cc4e82be68" name="LiteFlow" meeting="false" start="2024-12-02" duration="22" complete="0" thirdDate="2024-06-24" thirdDate-constraint="0" priority="0" expand="true"/>
         <task id="16" uid="3e4c033aa59e455497fffa4a9c49eba5" name="Docker" meeting="false" start="2024-05-27" duration="1" complete="0" priority="3" expand="true"/>
